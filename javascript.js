@@ -35,19 +35,15 @@ function choiceDefeat(loser) {
     let d;
     switch (loser) {
         case "rock":
-            return d = "Paper";
-        case "paper":
             return d = "Scissors";
-        case "scissors":
+        case "paper":
             return d = "Rock";
+        case "scissors":
+            return d = "Paper";
     };
 };
 
 function playRound(human, computer) {
-
-    chosenChoice = getPlayerChoice();
-    humanChoice = choiceConvert(chosenChoice);
-    computerChoice = getComputerChoice();
 
     if (computer > human) {
         computerHand = choiceWin(chosenChoice);
@@ -64,7 +60,11 @@ function playRound(human, computer) {
 };
 
 function playGame(session) {
+
     for ( let z = 0; z < session; z++) {
+        chosenChoice = getPlayerChoice();
+        humanChoice = choiceConvert(chosenChoice);
+        computerChoice = getComputerChoice();
         playRound(humanChoice, computerChoice);
     };
     if (humanScore > computerScore) {
