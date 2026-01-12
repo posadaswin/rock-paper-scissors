@@ -19,17 +19,33 @@ function choiceConvert(chosenChoice) {
         
 };
 
+function choiceTranslate(translate) {
+    let c;
+    switch (translate) {
+        case "rock":
+            return c = "Paper";
+        case "paper":
+            return c = "Scissors";
+        case "scissors":
+            return c = "Rock";
+    };
+}
+
 function playRound(human, computer) {
+
     chosenChoice = getPlayerChoice();
     humanChoice = choiceConvert(chosenChoice);
     computerChoice = getComputerChoice();
+    computerHand = choiceTranslate(chosenChoice);
 
     if (computer > human) {
-        console.log("You Lose! Computer beats Human.");
+        console.log("You Lose! " + computerHand + " beats " + chosenChoice + ".");
         computerScore++;
-    } else {
-        console.log("You Win! Human beats Computer.");
+    } else if (human > computer) {
+        console.log("You Win! " + chosenChoice + " beats " + computerHand + ".");
         humanScore++;
+    } else {
+        console.log("It's a tie!");
     };
     console.log("Computer Score: " + computerScore + "  " + "Human Score: " + humanScore);
 };
@@ -48,7 +64,7 @@ function playGame(session) {
 let chosenChoice;
 let humanChoice;
 let computerChoice;
-let interpret;
+let computerHand;
 let humanScore = 0;
 let computerScore = 0;
 let alpha;
