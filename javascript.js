@@ -31,6 +31,7 @@ function playRound(human, computer) {
         console.log("You Win! Human beats Computer.");
         humanScore++;
     };
+    console.log("Computer Score: " + computerScore + "  " + "Human Score: " + humanScore);
 };
 
 function playGame(session) {
