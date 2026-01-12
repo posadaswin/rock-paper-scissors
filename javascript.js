@@ -69,5 +69,5 @@ let humanScore = 0;
 let computerScore = 0;
 let alpha;
 
-alpha = prompt("How many rounds you want?");
+alpha = prompt("How many rounds you want?", 5);
 playGame(alpha);
