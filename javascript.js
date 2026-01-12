@@ -1,10 +1,13 @@
+
 function getComputerChoice() {
     return Math.random();
 };
 
+
 function getPlayerChoice() {
     return prompt("Please enter your choice, is it rock, paper, or scissors?").toLowerCase();
 };
+
 
 function choiceConvert(chosenChoice) {
     let a;
@@ -87,3 +90,10 @@ let difficulty = 1;
 
 alpha = prompt("How many rounds you want?", 5);
 playGame(alpha);
+
+function playAgain() {
+    humanScore = 0;
+    computerScore= 0;
+    beta = prompt("How many rounds you want?", 5);
+    playGame(beta);
+}
