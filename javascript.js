@@ -19,9 +19,9 @@ function choiceConvert(chosenChoice) {
         
 };
 
-function choiceTranslate(translate) {
+function choiceWin(winner) {
     let c;
-    switch (translate) {
+    switch (winner) {
         case "rock":
             return c = "Paper";
         case "paper":
@@ -29,19 +29,32 @@ function choiceTranslate(translate) {
         case "scissors":
             return c = "Rock";
     };
-}
+};
+
+function choiceDefeat(loser) {
+    let d;
+    switch (loser) {
+        case "rock":
+            return d = "Paper";
+        case "paper":
+            return d = "Scissors";
+        case "scissors":
+            return d = "Rock";
+    };
+};
 
 function playRound(human, computer) {
 
     chosenChoice = getPlayerChoice();
     humanChoice = choiceConvert(chosenChoice);
     computerChoice = getComputerChoice();
-    computerHand = choiceTranslate(chosenChoice);
 
     if (computer > human) {
+        computerHand = choiceWin(chosenChoice);
         console.log("You Lose! " + computerHand + " beats " + chosenChoice + ".");
         computerScore++;
     } else if (human > computer) {
+        computerHand = choiceDefeat(chosenChoice);
         console.log("You Win! " + chosenChoice + " beats " + computerHand + ".");
         humanScore++;
     } else {
@@ -56,8 +69,10 @@ function playGame(session) {
     };
     if (humanScore > computerScore) {
         console.log("The Human is the Winner!!!")
-    } else {
+    } else if (computerScore > humanScore) {
         console.log("The Computer is the Winner!!!")
+    } else {
+        console.log("It's a tie!")
     };
 };
 
@@ -68,6 +83,7 @@ let computerHand;
 let humanScore = 0;
 let computerScore = 0;
 let alpha;
+let difficulty = 1;
 
 alpha = prompt("How many rounds you want?", 5);
 playGame(alpha);
