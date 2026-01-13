@@ -123,6 +123,8 @@ function playAgain() {
     humanScore = 0;
     computerScore= 0;
     // setting difficulty
+    difficulty = document.getElementById('setting-source').value;
+    console.log("Difficulty is set to " + capitalizeFirstLetter(difficulty));
     decidingFactor = difficultySetting(difficulty);
     // start new game
     beta = prompt("How many rounds you want?", 5);
