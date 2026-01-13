@@ -114,8 +114,8 @@ let decidingFactor = 1;
 
 
 // -------------   start of the script   -------------------
-let alpha = prompt("How many rounds you want?", 5);
-playGame(alpha);
+let startGameCount = prompt("How many rounds you want?", 5);
+playGame(startGameCount);
 
 function playAgain() {
     // clearing console and scores
@@ -127,6 +127,6 @@ function playAgain() {
     console.log("Difficulty is set to " + capitalizeFirstLetter(difficulty));
     decidingFactor = difficultySetting(difficulty);
     // start new game
-    beta = prompt("How many rounds you want?", 5);
-    playGame(beta);
+    playAgainGameCount = prompt("How many rounds you want?", 5);
+    playGame(playAgainGameCount);
 }
