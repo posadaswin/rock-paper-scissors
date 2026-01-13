@@ -105,8 +105,11 @@ alpha = prompt("How many rounds you want?", 5);
 playGame(alpha);
 
 function playAgain() {
+    // clearing console and scores
+    console.clear();
     humanScore = 0;
     computerScore= 0;
+    // start new game
     beta = prompt("How many rounds you want?", 5);
     playGame(beta);
 }
