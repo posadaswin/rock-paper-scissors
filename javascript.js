@@ -8,15 +8,27 @@ function getPlayerChoice() {
     return prompt("Please enter your choice, is it rock, paper, or scissors?").toLowerCase();
 };
 
-function choiceConvert(chosenChoice) {
+function difficultySetting(set = 'normal') {
     let a;
+    switch (set) {
+        case "easy":
+            return a = 5;
+        case "normal":
+            return a = 1;
+        case "hard":
+            return a = Math.random();
+    }
+};
+
+function choiceConvert(chosenChoice) {
+    let b;
     switch (chosenChoice) {
         case "rock":
-            return a = 0.1;
+            return b = 0.1 * decidingFactor;
         case "paper":
-            return a = 0.5;
+            return b = 0.5 * decidingFactor;
         case "scissors":
-            return a = 0.9;
+            return b = 0.9 * decidingFactor;
     };   
 };
 
@@ -89,7 +101,7 @@ function playGame(session) {
     };
 };
 
-// declare global variables
+// declare and initialize global variables
 let chosenChoice;
 let humanChoice;
 let computerChoice;
@@ -97,11 +109,12 @@ let computerHand;
 let humanHand;
 let humanScore = 0;
 let computerScore = 0;
-let alpha;
+let difficulty = "normal";
+let decidingFactor = 1;
 
 
 // -------------   start of the script   -------------------
-alpha = prompt("How many rounds you want?", 5);
+let alpha = prompt("How many rounds you want?", 5);
 playGame(alpha);
 
 function playAgain() {
@@ -109,6 +122,8 @@ function playAgain() {
     console.clear();
     humanScore = 0;
     computerScore= 0;
+    // setting difficulty
+    decidingFactor = difficultySetting(difficulty);
     // start new game
     beta = prompt("How many rounds you want?", 5);
     playGame(beta);
