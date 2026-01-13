@@ -9,54 +9,54 @@ function getPlayerChoice() {
 };
 
 function difficultySetting(set = 'normal') {
-    let a;
+    let result;
     switch (set) {
         case "easy":
-            return a = 5;
+            return result = 5;
         case "normal":
-            return a = 1;
+            return result = 1;
         case "hard":
-            return a = Math.random();
+            return result = Math.random();
     }
 };
 
 function choiceConvert(chosenChoice) {
-    let b;
+    let result;
     switch (chosenChoice) {
         case "rock":
-            return b = 0.1 * decidingFactor;
+            return result = 0.1 * decidingFactor;
         case "paper":
-            return b = 0.5 * decidingFactor;
+            return result = 0.5 * decidingFactor;
         case "scissors":
-            return b = 0.9 * decidingFactor;
+            return result = 0.9 * decidingFactor;
     };   
 };
 
-function capitalizeFirstLetter(val) {
-    return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+function capitalizeFirstLetter(anyWord) {
+    return String(anyWord).charAt(0).toUpperCase() + String(anyWord).slice(1);
 };
 
-function choiceWin(winner) {
-    let c;
-    switch (winner) {
+function choiceWin(humanDecision) {
+    let result;
+    switch (humanDecision) {
         case "rock":
-            return c = "Paper";
+            return result = "Paper";
         case "paper":
-            return c = "Scissors";
+            return result = "Scissors";
         case "scissors":
-            return c = "Rock";
+            return result = "Rock";
     };
 };
 
-function choiceDefeat(loser) {
-    let d;
-    switch (loser) {
+function choiceDefeat(humanDecision) {
+    let result;
+    switch (humanDecision) {
         case "rock":
-            return d = "Scissors";
+            return result = "Scissors";
         case "paper":
-            return d = "Rock";
+            return result = "Rock";
         case "scissors":
-            return d = "Paper";
+            return result = "Paper";
     };
 };
 
