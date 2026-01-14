@@ -61,7 +61,7 @@ function choiceDefeat(humanDecision) {
 };
 
 function playRound(roundNumber) {
-    for ( let z = 0; z < roundNumber; z++) {
+    for ( let roundCount = 0; z < roundNumber; roundCount++) {
         chosenChoice = getPlayerChoice();
         humanChoice = choiceConvert(chosenChoice);
         computerChoice = getComputerChoice();
